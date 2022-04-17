@@ -17,9 +17,9 @@ def deltaE(S0, Sn, J, H):
 
 def ising(n=200,
           nsteps=500000,
-          H=0,
+          H=5,
           J=1,
-          T=1,
+          T=0,
           count_spins=False,
           countij=[1, 1],
           correlation=False,

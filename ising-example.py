@@ -52,13 +52,14 @@ def pil_image(lattice, fname="ising.png"):
 
 
 def main():
-    import sys, getopt
+    import sys
+    import getopt
     opts, args = getopt.getopt(sys.argv[1:], 'n:s:h:j:t:')
-    n = 200
+    n = 100
     nsteps = 500000
     H = 0
-    J = 1
-    T = 1
+    J = -5
+    T = 0.1
     for key, val in opts:
         if key == '-n':
             n = int(val)
@@ -71,9 +72,11 @@ def main():
         elif key == '-t':
             T = float(val)
     lattice, energies = ising(n, nsteps, H, J, T)
+    print("循环结束")
     pil_image(lattice)
 
     plot(energies)
+    print("绘图结束")
     return
 
 
